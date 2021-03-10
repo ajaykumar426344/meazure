@@ -1,0 +1,27 @@
+-c requirements.txt
+asynctest
+bandit
+black
+coverage
+flake8
+flake8-docstrings
+flake8-import-order
+mock<4 # Mock 4 breaks a bunch of unit tests
+mockredispy
+moto
+mypy
+Pillow
+pre-commit
+pytest
+pytest-asyncio
+pytest-cov
+pytest-html
+pytest-mock
+pytest-timeout
+pytest-tornado
+pytest-xdist
+redislite
+readme_renderer
+selenium
+tornado
+tox

@@ -1,0 +1,122 @@
+# This configuration is used for ConsoleMe's unit tests.
+
+extends:
+  - example_config_base.yaml
+  - example_secrets.yaml
+
+development: true
+environment: test
+
+url: http://127.0.0.1:8081
+
+tornado:
+  debug: true
+  port: 8081
+  xsrf: false
+
+account_ids_to_name:
+  "123456789012":
+    - default_account
+
+auth:
+  get_groups_by_header: true
+  get_user_by_header: true
+  groups_header_name: group_header
+  user_header_name: user_header
+  require_mtls: true
+  require_jwt: false
+
+celery:
+  test_account_ids:
+    - "123456789012"
+  sync_regions:
+    - us-east-1
+    - us-west-2
+    - eu-west-1
+redis:
+  host:
+    us-east-1: null
+    us-west-2: null
+    eu-west-1: null
+  port: null
+
+dynamic_config:
+  group_mapping:
+    someuser@example.com:
+      roles:
+        - arn:aws:iam::123456789012:role/userrolename
+    group1@example.com:
+      roles:
+        - arn:aws:iam::123456789012:role/rolename
+      cli_only_roles:
+        - arn:aws:iam::123456789012:role/rolename2
+    groupa@example.com:
+      roles:
+        - arn:aws:iam::123456789012:role/roleA
+        - arn:aws:iam::123456789012:role/roleB
+
+aws:
+  account_number: 123456789012
+  region: us-east-1
+
+ses:
+  consoleme:
+    sender: consoleme_test@example.com
+    name: Consoleme
+  accessui:
+    sender: access_ui_test@example.com
+    name: Access UI
+
+user_role_creator:
+  default_trust_policy: {}
+
+policies:
+  supported_resource_types_for_policy_application:
+    - s3
+    - sns
+    - sqs
+
+config:
+  load_from_dynamo: false
+
+cloud_credential_authorization_mapping:
+  role_tags:
+    enabled: true
+    required_trust_policy_entity: ConsoleMeInstanceProfile
+    authorized_groups_tags:
+      - authorized_groups
+    authorized_groups_cli_only_tags:
+      - authorized_groups_cli_only
+  dynamic_config:
+    enabled: true
+  internal_plugin:
+    enabled: true
+
+cache_roles_across_accounts:
+  all_roles_combined:
+    s3:
+      bucket: fakebucket
+      file: test/all_roles_combined_v1.json
+
+cache_cloud_accounts:
+  s3:
+    bucket: fakebucket
+    file: test/cache_cloud_accounts_v1.json
+
+# You'll probably want to override FUNCTION to generate this data with your own business logic.
+application_settings:
+  application_1:
+    owner: groupa@example.com
+    owner_url: https://www.example.com/groupa@example.com
+    app_url: https://www.example.com/ci_cd_pipeline/application_1
+    roles:
+      - arn:aws:iam::123456789012:role/application_1InstanceProfile
+      - arn:aws:iam::123456789013:role/application_1InstanceProfile
+  application_2:
+    owner: groupa@example.com
+    roles:
+      - arn:aws:iam::123456789012:role/application_2InstanceProfile
+
+api_auth:
+  valid_entities:
+    - user@example.com

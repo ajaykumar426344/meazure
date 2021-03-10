@@ -1,0 +1,15 @@
+extends:
+  - example_config_base.yaml
+  - example_secrets.yaml
+
+auth:
+  get_user_by_aws_alb_auth: true
+  set_auth_cookie: true
+
+get_user_by_aws_alb_auth_settings:
+  jwt_email_key: sub
+  jwt_groups_key: groups
+
+development: true
+
+url: http://127.0.0.1:8081

@@ -1,0 +1,5 @@
+-c requirements.txt
+-c requirements-test.txt
+mkdocs
+mkdocs-material
+pyyaml

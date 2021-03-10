@@ -1,0 +1,57 @@
+aiozipkin
+asgiref # Allows sync_to_async call, executes synchronous code in its own threadpool.
+bleach
+boto3
+cchardet
+celery[redis]
+cloudaux
+datamodel-code-generator
+deepdiff
+defusedxml
+ed25519
+elasticsearch
+elasticsearch_dsl
+furl
+gitpython
+google-api-python-client
+google-auth-httplib2
+google-cloud-storage
+gunicorn
+hiredis
+idna<3  # Required because moto has it pinned
+ipython
+isodate
+jmespath
+jsonschema
+kombu
+marshmallow
+logmatic-python
+lxml
+okta_jwt
+pandas<1 #  Internal plugin depends on Pandas < 1
+pkgconfig
+policy-sentry
+policyuniverse
+presto-python-client
+pycurl # For AsyncHTTPClient
+pydantic
+pyjwt
+pylint
+python-dateutil
+python-json-logger==0.1.11 # Needed until this is merged and new version created: https://github.com/madzak/python-json-logger/pull/113
+python3-saml
+pytz
+redis
+requests
+retry
+retrying
+ruamel.yaml
+sentry-sdk==0.16.1 # Internal plugin depends on a library which depends on this version of sentry_sdk
+simplejson
+six
+tenacity
+tornado
+ujson
+uvloop
+validate_email
+xmlsec
