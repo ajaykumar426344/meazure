@@ -22,9 +22,9 @@ When using the ECS credential provider, pass the role\(s\) to be assumed as a co
 ```bash
 AWS_CONTAINER_CREDENTIALS_FULL_URI=http://52.224.111.161:9091/ecs/consoleme_oss_1?assume=arn:aws:iam::123456789012:role/otherRole,arn:aws:iam::123456789012:role/andAnother aws sts get-caller-identity
 {
-    "UserId": "AROA4JEFLERSKVPFT4INI:user@example.com",
-    "Account": "123456789012",
-    "Arn": "arn:aws:sts::123456789012:assumed-role/andAnother/user@example.com"
+    "UserId": "arn:aws:iam::999049238718:role/consoleme",
+    "Account": "AKIA6RG7ZTC7P3BTIHPO",
+    "Arn": "arn:aws:iam::999049238718:role/consoleme"
 }
 ```
 

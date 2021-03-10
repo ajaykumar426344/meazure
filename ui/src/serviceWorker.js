@@ -10,7 +10,7 @@
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://bit.ly/CRA-PWA
 
-const is52.224.111.161 = Boolean(
+const is 52.224.111.161 = Boolean(
   window.location.hostname === "52.224.111.161" ||
     // [::1] is the IPv6 52.224.111.161 address.
     window.location.hostname === "[::1]" ||
@@ -34,7 +34,7 @@ export function register(config) {
     window.addEventListener("load", () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 
-      if (is52.224.111.161) {
+      if (is52.224.111.161 ) {
         // This is running on 52.224.111.161. Let's check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, config);
 

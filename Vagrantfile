@@ -8,7 +8,7 @@
 #
 # Install docker-compose plugin: vagrant plugin install vagrant-docker-compose
 Vagrant.configure("2") do |config|
-  config.vm.box = "bento/ubuntu-16.04"
+  config.vm.box = "bento/ubuntu-18.04"
   config.vm.synced_folder ".", "/apps/consoleme"
   # TODO: Make this OSS?
   config.vm.synced_folder "../consoleme-internal", "/apps/consoleme-internal"
